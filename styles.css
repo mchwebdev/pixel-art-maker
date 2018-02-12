@@ -1,0 +1,111 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+body {
+  text-align: center;
+  margin: 0;
+  margin-top: 0;
+  box-sizing: border-box;
+}
+
+#background {
+  background-image: url(https://static.pexels.com/photos/194098/pexels-photo-194098.jpeg);
+  background-size: cover;
+  min-height: 100vh;
+  width: 100%;
+}
+
+#content {
+  min-height: calc(100vh - 15px);
+}
+
+h1 {
+  font-family: Monoton;
+  text-shadow: 1px 1px 1px #fff;
+  font-weight: 600;
+  font-size: 70px;
+  margin: 0;
+  color: #F20075;
+}
+
+h2 {
+  margin: 1em 0 0.25em;
+  color: #F20075;
+  font-family: Monoton;
+  font-weight: 300;
+  text-shadow: 1px 1px #fff;
+}
+
+h2:first-of-type {
+  margin-top: 0.5em;
+}
+
+#sizePicker {
+  color: #028482;
+  font-family: Monoton;
+  letter-spacing: 1.5px;
+  font-weight: 300;
+  text-shadow: 1.2px 1.2px #fff;
+}
+
+ul {
+  color: #fff;
+  font-family: Monoton;
+  font-weight: 300;
+}
+
+table,
+tr,
+td {
+  border: 1px solid black;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  background-color: #ffffff;
+}
+
+tr {
+  height: 20px;
+}
+
+td {
+  width: 20px;
+}
+
+input[type=number] {
+  width: 6em;
+}
+
+input[type=color] {
+  border-radius: 4px;
+  padding: 5px;
+  width: 12em;
+  background-color: white;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+hr {
+  border: none;
+  height: 0.5px;
+  background-color: #D3D3D3;
+}
+
+footer {
+  color: #D3D3D3;
+  font-family: sans-serif;
+  font-weight: 100;
+  font-size: 12px;
+  /*position: absolute;*/
+  /*bottom: 0;*/
+  height: 15px;
+  width: 100%;
+  text-align: center;
+}
