@@ -10,7 +10,7 @@ body {
 }
 
 #background {
-  background-image: url(https://static.pexels.com/photos/194098/pexels-photo-194098.jpeg);
+  background-image: url("img/pencil-850px.png");
   background-size: cover;
   min-height: 100vh;
   width: 100%;
