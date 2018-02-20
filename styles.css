@@ -81,7 +81,7 @@ h2 {
   text-align: center;
   width: 5em;
   height: 0.8rem;
-  padding: 0.3em 0.3em 0.3em 1.3em;
+  padding: 0.3em 0.3em 0.3em 1.4em;
   margin: 0 0 0 1em;
   font: 600 "Amatic SC", cursive;
   color: #028482;
@@ -218,6 +218,13 @@ td {
 }
 
 /* MEDIA QUERIES FOR RESPONSIVENESS */
+
+@media screen and (max-width: 768px) {
+  #input-height,
+  #input-width {
+    padding: 0.3em 0;
+  }
+}
 
 @media screen and (max-width: 480px) {
   #background {
