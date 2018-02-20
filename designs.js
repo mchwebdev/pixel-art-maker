@@ -1,57 +1,62 @@
 // Variable declarations
-const inputHeight = $('#input_height');
-const inputWidth = $('#input_width');
-const table = $('#pixel_canvas');
-const inputSubmit = $('#submit');
-const inputClear = $('#clearTable');
+const inputHeight = $('#input-height');
+const inputWidth = $('#input-width');
+const table = $('#pixel-canvas');
+const inputClear = $('#clear-table');
 const inputColor = $('input[type="color"]');
+const sizePicker = $('#size-picker');
 
 // Function to trigger makeGrid() when submit button is clicked
-inputSubmit.click(function(evt) {
-  evt.preventDefault();
+sizePicker.submit(function(e) {
+    e.preventDefault();
 
-  // Clear previously made table (if any)
-  table.html('');
+    // Clear previously made table (if any)
+    table.html('');
+    makeGrid();
+});
+
+// Function to clear all cells from the table when the clear table button is clicked
+inputClear.click(function(e) {
+  e.preventDefault();
   makeGrid();
 });
 
-// Function to clear all cells from the table when button is clicked
-inputClear.click(function(evt) {
-  evt.preventDefault();
-  clearTable();
-});
-
-// ClearTable function
-function clearTable() {
-  const td = $('td');
-  td.removeAttr('bgColor', inputColor.val());
-}
-
 // Make grid function
 function makeGrid() {
-  height = inputHeight.val();
-  width = inputWidth.val();
+  const height = inputHeight.val();
+  const width = inputWidth.val();
+
+  // Clear previously made table (if any)
+  table.html('');
 
   // Loop to:
   // Create rows
   for (let row = 0; row < height; row++) {
-    table.append('<tr></tr>');
+    table.append('<tr class="canvas"></tr>');
 
     //Create columns
     for (let col = 0; col < width; col++) {
-      table.children().last().append('<td></td>');
+      table.children().last().append('<td class="canvas"></td>');
     }
   }
 }
 
-// Function to change the clicked cell background color
+// Function to add or remove background color of cells
 table.on('click', 'td', function() {
-  $(this).attr('bgColor', inputColor.val());
-});
+  // Checks the actual color value of bgColor
+  let bgValue = $(this).attr('bgColor');
 
-// Function to remove the background color from the clicked cell
-table.on('dblclick', 'td', function() {
-  $(this).removeAttr('bgColor', inputColor.val());
+  // If the bgColor is different than the inputColor value, replace the cell color with the inputColor value
+  if (bgValue != inputColor.val()) {
+    $(this).attr('bgColor', inputColor.val());
+
+    // Else if the bgColor of the cell is the same as the inputColor value, then remove the attribute to remove the background color
+  } else if ($(this).is('[bgColor]')) {
+    $(this).removeAttr('bgColor');
+    // Else create bgColor attribute and add the inputColor value to it
+  } else {
+    $(this).attr('bgColor', inputColor.val());
+  }
 });
 
 makeGrid();
