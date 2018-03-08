@@ -1,39 +1,49 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Pixel Art Maker!</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#F20075">
+  <link rel="shortcut icon" type="image/png" href="img/pencil-favicon.png">
+  <link rel="icon" sizes="192x192" href="img/pencil-chrome-192px.png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   <link rel="stylesheet" href="styles.css">
+  <title>Pixel Art Maker!</title>
 </head>
+
 <body>
   <div id="background">
-    <div id="content">
+    <main id="content">
       <h1>Pixel Art Maker</h1>
 
       <h2>Choose Grid Size</h2>
-      <form id="sizePicker">
-        Grid Height:
-        <input type="number" id="input_height" name="height" min="1" value="10">
-        Grid Width:
-        <input type="number" id="input_width" name="width" min="1" value="10">
-        <input id="submit" type="submit">
+      <form id="size-picker">
+        <div id="height">Grid Height<input type="number" id="input-height" name="height" min="1" max="50" value="10"></div>
+        <div id="width">Grid Width<input type="number" id="input-width" name="width" min="1" max="50" value="10"></div>
+        <div id="submit"><input id="input-submit" type="submit"></div>
       </form>
 
       <h2>Pick A Color</h2>
-      <input type="color" value="#FFCC00" id="colorPicker">
+      <input type="color" value="#FFCC00" id="color-picker">
 
       <h2>Design Canvas</h2>
-      <table id="pixel_canvas"></table>
-      <input id="clearTable" type="submit" value="clear table">
-      <ul>
-        <li>To color a cell click once on the desired cell</li>
-        <li>To remove the color from a cell double click on it</li>
-        <li>To clear all cells click on the button clear table</li>
+      <table id="pixel-canvas"></table>
+      <input id="clear-table" type="submit" value="clear table">
+      <ul id="instructions">
+        <li>To color a cell just click on it</li>
+        <li>Click again to remove it's color</li>
+        <li>To clear all cells click on the clear table button</li>
       </ul>
-    </div>
-<footer>by maxCH - 2017 - Udacity's Google Developer Challenge Scholarship: Front-End Web Dev - Final project</footer>
-</div>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="designs.js"></script>
+    </main>
+    <footer id="footer"><a href="https://github.com/mchwebdev" id="github-icon" target="_blank"><i class="fab fa-github"></i></a></footer>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="designs.js"></script>
 </body>
+
 </html>

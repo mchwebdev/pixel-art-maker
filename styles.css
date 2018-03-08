@@ -1,111 +1,246 @@
-html {
+* {
   margin: 0;
   padding: 0;
 }
+
+html,
 body {
   text-align: center;
   margin: 0;
   margin-top: 0;
   box-sizing: border-box;
+  font: 16px sans-serif;
 }
 
+/* MAIN CONTAINER */
+
 #background {
-  background-image: url(https://static.pexels.com/photos/194098/pexels-photo-194098.jpeg);
+  background: url("img/pencil-850px.png") no-repeat top center fixed;
   background-size: cover;
-  min-height: 100vh;
+  height: 100%;
   width: 100%;
 }
 
+/* CONTENT */
+
 #content {
-  min-height: calc(100vh - 15px);
+  min-height: 100vh;
+  background-attachment: fixed;
 }
 
 h1 {
-  font-family: Monoton;
-  text-shadow: 1px 1px 1px #fff;
-  font-weight: 600;
-  font-size: 70px;
+  font: 500 70px Monoton;
+  text-shadow: 0.03em 0.03em 0.03em #fff;
   margin: 0;
   color: #F20075;
 }
+
+/* Choose grid size */
 
 h2 {
   margin: 1em 0 0.25em;
   color: #F20075;
-  font-family: Monoton;
-  font-weight: 300;
-  text-shadow: 1px 1px #fff;
+  font: 2em "Amatic SC", cursive;
+  letter-spacing: 0.05em;
+  text-shadow: 0.03em 0.03em #fff;
 }
 
-h2:first-of-type {
-  margin-top: 0.5em;
-}
-
-#sizePicker {
+#size-picker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   color: #028482;
-  font-family: Monoton;
-  letter-spacing: 1.5px;
-  font-weight: 300;
-  text-shadow: 1.2px 1.2px #fff;
+  font-family: "Amatic SC", cursive;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  text-shadow: 0.03em 0.03em #fff;
 }
 
-ul {
-  color: #fff;
-  font-family: Monoton;
-  font-weight: 300;
+#height {
+  display: flex;
+  align-items: center;
+  padding: 1em;
+  text-align: center;
+  font-size: 1.5em;
 }
 
-table,
-tr,
-td {
+#width {
+  display: flex;
+  align-items: center;
+  padding: 0 1em 1em;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+#input-height,
+#input-width {
+  border: 0.2em solid #028482;
+  border-radius: 0.5em;
+  text-shadow: 0.03em 0.03em #fff;
+  text-align: center;
+  width: 5em;
+  height: 0.8rem;
+  padding: 0.3em 0.3em 0.3em 1.4em;
+  margin: 0 0 0 1em;
+  font: 600 "Amatic SC", cursive;
+  color: #028482;
+  background: transparent;
+  box-shadow: 0.03em 0.03em #fff;
+  opacity: 0.8;
+}
+
+
+/* Change input text to red when the value entered is higher than the max value of 50 */
+
+#input-height:invalid,
+#input-width:invalid {
+  color: red;
+}
+
+#submit {
+  width: 50%;
+}
+
+#input-submit {
+  font: 700 1.2em "Amatic SC", cursive;
+  color: #028482;
+  letter-spacing: 0.4em;
+  border: 0.1em solid #028482;
+  border-radius: 1.5em;
+  padding: 0 0 0.1em 0.4em;
+  text-align: center;
+  background: transparent;
+  text-shadow: 0.03em 0.03em #fff;
+  box-shadow: 0.03em 0.03em #fff;
+}
+
+#input-submit:hover {
+  font-size: 1.3em;
+  background-color: rgba(142, 196, 206, 0.7);
+}
+
+/* Pick a color */
+
+#color-picker {
+  -webkit-appearance: none;
+  border: 0.2em solid #028482;
+  width: 15em;
+  height: 2.5em;
+  border-radius: 1.5em;
+  padding: 0;
+}
+
+/* To remove default properties of the input type color */
+#color-picker::-webkit-color-swatch-wrapper {
+  padding: 0;
+  border-radius: 0.5em;
+}
+
+#color-picker::-webkit-color-swatch {
+  padding: 0;
+  border: none;
+  border-radius: 1.5em;
+}
+
+/* Design canvas */
+
+#pixel-canvas {
+  border-collapse: collapse;
+  border: 1px solid black;
+  margin: 0 auto;
+  background-color: #f5f5f5;
+}
+
+.canvas {
   border: 1px solid black;
 }
 
-table {
-  border-collapse: collapse;
-  margin: 0 auto;
-  background-color: #ffffff;
-}
-
 tr {
-  height: 20px;
+  height: 1.5em;
 }
 
 td {
-  width: 20px;
+  width: 1.5em;
 }
 
-input[type=number] {
-  width: 6em;
+/* Clear table button */
+
+#clear-table {
+  font: 700 1.2em "Amatic SC", cursive;
+  color: #028482;
+  letter-spacing: 0.4em;
+  border: 0.2em solid #028482;
+  border-radius: 1.5em;
+  text-align: center;
+  background: rgba(158, 213, 223, 0.8);
+  margin: 1em auto;
+  padding: 0 0 0.1em 0.4em;
+  text-shadow: 0.02em 0.02em #fff;
 }
 
-input[type=color] {
-  border-radius: 4px;
-  padding: 5px;
-  width: 12em;
-  background-color: white;
+#clear-table:hover {
+  font-size: 1.3em;
+  color: #9ed5df;
+  border: 3px solid #9ed5df;
+  background: #028482;
+  text-shadow: none;
 }
 
-ul {
+/* INSTRUCTIONS */
+
+#instructions {
+  color: #fff;
+  font: 200 1.5em "Amatic SC", cursive;
+  text-shadow: 0.02em 0.02em 0.02em #9ed5df;
   list-style-type: none;
-  padding-left: 0;
+  padding: 0 0 1em;
   margin: 0;
 }
 
-hr {
-  border: none;
-  height: 0.5px;
-  background-color: #D3D3D3;
-}
+/* FOOTER */
 
-footer {
-  color: #D3D3D3;
-  font-family: sans-serif;
-  font-weight: 100;
-  font-size: 12px;
-  /*position: absolute;*/
-  /*bottom: 0;*/
-  height: 15px;
+#footer {
+  height: 3.2em;
   width: 100%;
   text-align: center;
+}
+
+#github-icon {
+  font-size: 2.3em;
+  color: #9ed5df;
+}
+
+#github-icon:hover {
+  font-size: 2.8em;
+  text-decoration: none;
+  color: #a8e2ed;
+}
+
+/* MEDIA QUERIES FOR RESPONSIVENESS */
+
+@media screen and (max-width: 768px) {
+  #input-height,
+  #input-width {
+    padding: 0.3em 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #background {
+    background-position: bottom;
+  }
+  #height {
+    padding: 0.3em;
+  }
+  #width {
+    padding: 0.3em;
+  }
+  #submit {
+    width: 50%;
+    padding: 1em 0.3em 0.3em;
+  }
+  #instructions {
+    font-size: 1.4em;
+  }
 }
